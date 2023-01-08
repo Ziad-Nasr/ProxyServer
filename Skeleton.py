@@ -73,17 +73,14 @@ while 1:
                         print("c.connect((hostn,80))")
                         # Fill in end.
                         # Create a temporary file on this socket and ask port 80 for the file requested by the client
-                        print ("Test")
                         fileobj = c.makefile('w', None)
-                        print ("Test")
                         
-                        print("File is caching... Estana")
+                        print("File is caching... wait")
                         fileobj.write("GET "+"http://" + filename + " HTTP/1.0\n\n")
                         fileobj.close()
-                        print("File is Cached... Yalla")
+                        print("File is Cached... Done")
                         # Read the response into buffer
                         # Fill in start.
-                        print("Testrb")
                         fileobj2 = c.makefile("rb", None)
                         Read = fileobj2.readlines()
                         print("Read")
